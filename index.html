@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Vendas - Código da Mulher Inesquecível</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #111827;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+            padding: 2rem 1.5rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .logo-box {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-text {
+            text-align: center;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .headline {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #111827;
+            line-height: 1.2;
+        }
+
+        .subheadline {
+            font-size: 1.125rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .check-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #10b981;
+            flex-shrink: 0;
+        }
+
+        .benefit-text {
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background-color: #10b981;
+            color: white;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-size: 1.125rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: fit-content;
+        }
+
+        .cta-button:hover {
+            background-color: #059669;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-radius: 1rem;
+            /* padding: 2rem; */
+            width: 100%;
+            max-width: 24rem;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .dark-section {
+            padding: 4rem 1.5rem;
+            background-color: #111827;
+            color: white;
+        }
+
+        .dark-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .process-item {
+            aspect-ratio: 16/9;
+            background-color: #374151;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .process-text {
+            text-align: center;
+            color: #d1d5db;
+            font-size: 0.875rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.125rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background-color: #1f2937;
+            border: 1px solid #ef4444;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-title {
+            color: #fca5a5;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-text {
+            font-size: 1.125rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .green-section {
+            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+        }
+
+        .green-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .section-subtitle {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ef4444;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-text {
+            font-size: 1.125rem;
+            color: #374151;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        .guarantee-box {
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .guarantee-title {
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+
+        .guarantee-text {
+            color: #6b7280;
+        }
+
+        .blue-section {
+            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+        }
+
+        .blue-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .method-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .method-subtitle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ef4444;
+            margin-bottom: 2rem;
+        }
+
+        .method-text {
+            font-size: 1.125rem;
+            color: #374151;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .step-image {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bonus-section {
+            padding: 4rem 1.5rem;
+            background-color: #111827;
+            color: white;
+        }
+
+        .bonus-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bonus-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .bonus-card {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .bonus-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: #ef4444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .bonus-card-title {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #fca5a5;
+        }
+
+        .bonus-card-text {
+            color: #d1d5db;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-container,
+            .green-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .process-grid,
+            .steps-grid,
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .headline {
+                font-size: 2rem;
+            }
+
+            .method-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        .cta-button,
+        .btn-oferta {
+            background-color: #14b8a6;
+            color: white;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Efeito Hover */
+        .cta-button:hover,
+        .btn-oferta:hover {
+            background-color: #0d9488;
+            /* tom mais escuro */
+            transform: scale(1.03);
+            /* cresce levemente */
+        }
+
+        #urgent-date {
+            font-weight: bold;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <!-- Barra de Urgência -->
+    <div id="urgent-bar" style="
+    background-color: #e53935; 
+    color: white; 
+    text-align: center; 
+    padding: 0.75rem; 
+    font-weight: bold;
+    font-family: sans-serif;">
+        Somente nos dias: <span id="urgent-date"></span> você terá um desconto especial de 73%!
+    </div>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content align-items-center align-items-md-start">
+                <img width="100px" src="imagens/Logo.jpeg">
+
+                <h1 class="headline">
+                    Recupere sua essência, vire o jogo e faça ele te enxergar com outros olhos — sem precisar correr
+                    atrás.
+                </h1>
+
+                <p class="subheadline">
+                    Descubra atitudes práticas e emocionais que despertam desejo, respeito e reconquista — começando por
+                    você.
+                </p>
+
+                <div class="benefits-list">
+
+                    <div class="benefit-item">
+                        <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="benefit-text">
+                            Parar de se anular por amor
+                        </span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="benefit-text">
+                            Evitar correr atrás e se frustrar
+                        </span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="benefit-text">
+                            Ser vista com mais admiração
+                        </span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="benefit-text">
+                            Atrair respeito com atitudes simples
+                        </span>
+                    </div>
+
+                    <div class="benefit-item">
+                        <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="benefit-text">
+                            Recuperar sua autoconfiança sem esforço
+                        </span>
+                    </div>
+
+                </div>
+
+                <a href="https://pay.kiwify.com.br/lfVqaqT" target="_blank" class="cta-button">
+                    GARANTIR MINHA VAGA
+                </a>
+
+            </div>
+
+            <img class="hero-image image-placeholder" src="imagens/Imagem6.jpeg">
+            <!-- <div class="hero-image">
+                <div class="image-placeholder">
+                    <div style="font-weight: 500; margin-bottom: 0.5rem;"></div>
+                    <div style="font-size: 0.875rem;">Destaque do produto/método</div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Seção do Problema/Contexto -->
+    <section class="dark-section py-5">
+        <div class="dark-container">
+
+            <!-- Versão Desktop (grid normal) -->
+            <div class="process-grid d-none d-md-flex justify-content-center gap-4">
+                <img class="process-item" width="350" height="350" src="imagens/Imagem3.jpeg" alt="Imagem 1">
+                <img class="process-item" width="350" height="350" src="imagens/Imagem4.jpeg" alt="Imagem 2">
+                <img class="process-item" width="350" height="350" src="imagens/Imagem5.jpeg" alt="Imagem 3">
+            </div>
+
+            <!-- Versão Mobile (carrossel) -->
+            <div id="problemaCarousel" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <img src="imagens/Imagem3.jpeg" class="d-block mx-auto img-fluid rounded" width="350" height="350"
+                            alt="Imagem 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagens/Imagem4.jpeg" class="d-block mx-auto img-fluid rounded" width="350" height="350"
+                            alt="Imagem 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagens/Imagem5.jpeg" class="d-block mx-auto img-fluid rounded" width="350" height="350"
+                            alt="Imagem 3">
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#problemaCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#problemaCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+
+            <!-- Texto -->
+            <div class="text-center mt-5">
+                <p class="intro-text">
+                    Você já teve a sensação de que, para ser amada, precisa abrir mão de si mesma? Você cede, cala,
+                    releva… e no fim, continua se sentindo invisível — como se nunca fosse o suficiente. O pior é que,
+                    por fora, parece tudo bem. Mas por dentro, algo seu fica cada vez mais distante. Existe uma forma
+                    sutil (e incrivelmente poderosa) de virar esse jogo — sem confrontos, sem pressão — só aprendendo a
+                    colocar limites que ninguém vê, mas todo mundo sente.
+                </p>
+
+                <div class="highlight-box">
+                    <h3 class="highlight-title">
+                        O diferencial que muda tudo:
+                    </h3>
+                    <p class="highlight-text">
+                        Ao contrário dos conselhos genéricos que mandam você “se impor” ou “ser mais difícil” (mas
+                        deixam você se sentindo ainda mais insegura), a Técnica da Linha Invisível te mostra como mudar
+                        seu posicionamento de forma sutil e prática, sem precisar brigar nem bancar uma versão forçada
+                        de si mesma. Em vez de jogar um jogo que nunca funcionou, você passa a agir com clareza
+                        emocional — e essa mudança de energia, mesmo sem palavras, transforma a forma como o outro te
+                        enxerga e te trata.
+                    </p>
+                </div>
+
+                <div style="padding-top: 2rem;">
+                    <h3 style="font-size: 1.5rem; font-weight: bold;">
+                        Apresentamos o Técnica da Linha Invisível
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Sobre o Produto -->
+    <section class="green-section">
+        <div class="green-container">
+            <div>
+                <div class="section-subtitle">
+                    SOBRE ESTE PRODUTO
+                </div>
+                <h2 class="section-title">
+                    Código da Mulher Inesquecível
+                </h2>
+                <p class="section-text">
+                    Você foi deixada, ignorada ou trocada e sente que perdeu seu valor?
+                    Esse eBook é o que você precisa para recuperar seu poder emocional e virar o jogo — sem implorar, se
+                    humilhar ou correr atrás.
+                    Em "Faça Ele Se Arrepender: O Poder da Mulher Que Se Valoriza", você vai aprender:
+
+                <ul class="section-text list-unstyled ms-3">
+                    <li>💡 Como reconquistar sua autoestima antes de qualquer reconquista</li>
+                    <li>💡 Atitudes silenciosas que despertam saudade e desejo</li>
+                    <li>💡 O que não fazer se quiser que ele volte por iniciativa própria</li>
+                    <li>💡 Como agir de forma estratégica e emocionalmente inteligente</li>
+                    <li>💡 Técnicas simples para gerar arrependimento verdadeiro</li>
+                </ul>
+                Este é um guia rápido, direto e acessível. Ideal para quem quer resultados reais, começando agora —
+                com leveza, estratégia e amor-próprio.
+                </p>
+
+                <div class="guarantee-box">
+                    <h3 class="guarantee-title">Nossa Garantia Para Você</h3>
+                    <p class="guarantee-text">
+                        Garantia incondicional de 7 dias. Se não ficar completamente satisfeito, devolvemos 100% do seu
+                        dinheiro sem perguntas.
+                    </p>
+                </div>
+
+                <a href="https://pay.kiwify.com.br/lfVqaqT" target="_blank" class="cta-button text-decoration-none">
+                    GARANTIR MEU ACESSO
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <img width="100%" src="imagens/produto.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona o Método -->
+    <section class="blue-section">
+        <div class="blue-container">
+            <h2 class="method-title">
+                Como funciona o Método
+            </h2>
+            <h3 class="method-subtitle">
+                Técnica da Linha Invisível?
+            </h3>
+
+            <p class="method-text">
+                O método funciona em três etapas práticas e sutis. Primeiro, você reconstrói sua autoestima
+                silenciosamente, sem precisar provar nada pra ninguém. Em seguida, aprende atitudes estratégicas — que
+                parecem pequenas, mas provocam um impacto emocional poderoso — e fazem ele te enxergar com outros olhos.
+                Por fim, você passa a agir com clareza emocional, colocando limites invisíveis que não geram conflito,
+                mas despertam respeito, desejo e arrependimento genuíno. Tudo isso sem deixar de ser você, sem jogos e
+                sem precisar correr atrás.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Bônus Exclusivos -->
+    <section class="bonus-section">
+        <div class="bonus-container">
+            <h2 class="bonus-title">
+                Bônus Exclusivos Para Você
+            </h2>
+
+            <div class="bonus-grid">
+
+                <div class="bonus-card">
+                    <div class="bonus-icon">
+                        <svg style="width: 1.5rem; height: 1.5rem; color: white;" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
+                                clip-rule="evenodd" />
+                            <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+                        </svg>
+                    </div>
+                    <h3 class="bonus-card-title">
+                        Bônus 1: Manual da Mulher que Impõe Limites sem Culpa
+                    </h3>
+                    <p class="bonus-card-text">
+                        Um guia prático para você aprender a dizer “não” sem ser vista como fria, grossa ou egoísta — e
+                        ainda ser mais respeitada por isso. Ideal para quem sente culpa ao se posicionar ou medo de
+                        afastar o outro. Com exemplos prontos de frases, posturas e atitudes que solidificam seu valor
+                        em qualquer relacionamento.
+                    </p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-icon">
+                        <svg style="width: 1.5rem; height: 1.5rem; color: white;" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
+                                clip-rule="evenodd" />
+                            <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+                        </svg>
+                    </div>
+                    <h3 class="bonus-card-title">
+                        Bônus 2: Diagnóstico da Autossabotagem Amorosa
+                    </h3>
+                    <p class="bonus-card-text">
+                        Um teste profundo e revelador que ajuda você a identificar exatamente quais comportamentos
+                        invisíveis estão fazendo você se anular nos relacionamentos — mesmo sem perceber. Ao final, você
+                        receberá um mapa de ação personalizado para neutralizar esses padrões e assumir, de vez, seu
+                        brilho numa relação.
+                    </p>
+                </div>
+
+                <div class="bonus-card">
+                    <div class="bonus-icon">
+                        <svg style="width: 1.5rem; height: 1.5rem; color: white;" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
+                                clip-rule="evenodd" />
+                            <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+                        </svg>
+                    </div>
+                    <h3 class="bonus-card-title">
+                        Bônus 3: Detox da Autoanulação – 7 Dias para Reconquistar a Si Mesma
+                    </h3>
+                    <p class="bonus-card-text">
+                        Um plano de 7 dias com exercícios simples e poderosos para eliminar hábitos invisíveis de
+                        autoanulação que afastam o seu valor — e recuperar sua autenticidade, autoestima e presença
+                        irresistível. Ideal para quem sente que "perdeu a si mesma" nos últimos relacionamentos e não
+                        sabe como voltar a se priorizar.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Valores -->
+    <section style="padding: 4rem 1.5rem; background-color: #ffffff;">
+        <div style="max-width: 40rem; margin: 0 auto;">
+            <div
+                style="background-color: #ffffff; border-radius: 0.75rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); padding: 2rem; border: 1px solid #e5e7eb;">
+                <!-- Lista de Produtos -->
+                <div style="margin-bottom: 2rem;">
+                    <!-- Produto Principal -->
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
+                        <div style="display: flex; align-items: center;">
+                            <span style="color: #10b981; margin-right: 0.5rem;">✓</span>
+                            <span style="font-weight: 500; color: #1f2937;">Código da Mulher Inesquecível</span>
+                        </div>
+                        <span style="font-weight: bold; color: #ef4444; text-decoration: line-through;">R$ 19,90</span>
+                    </div>
+
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
+                        <div style="display: flex; align-items: center; max-width: 70%;">
+                            <span style="color: #10b981; margin-right: 0.5rem; flex-shrink: 0;">✓</span>
+                            <span style="font-weight: 500; color: #1f2937;">
+                                Bônus 1: Manual da Mulher que Impõe Limites sem Culpa
+                            </span>
+                        </div>
+                        <span
+                            style="font-weight: bold; color: #ef4444; flex-shrink: 0; margin-left: 1rem; text-decoration: line-through;">
+                            R$ 29,90
+                        </span>
+                    </div>
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
+                        <div style="display: flex; align-items: center; max-width: 70%;">
+                            <span style="color: #10b981; margin-right: 0.5rem; flex-shrink: 0;">✓</span>
+                            <span style="font-weight: 500; color: #1f2937;">
+                                Bônus 2: Diagnóstico da Autossabotagem Amorosa
+                            </span>
+                        </div>
+                        <span
+                            style="font-weight: bold; color: #ef4444; flex-shrink: 0; margin-left: 1rem; text-decoration: line-through;">
+                            R$ 19,99
+                        </span>
+                    </div>
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6;">
+                        <div style="display: flex; align-items: center; max-width: 70%;">
+                            <span style="color: #10b981; margin-right: 0.5rem; flex-shrink: 0;">✓</span>
+                            <span style="font-weight: 500; color: #1f2937;">
+                                Bônus 3: Checklist das Atitudes que Geram Desejo
+                            </span>
+                        </div>
+                        <span
+                            style="font-weight: bold; color: #ef4444; flex-shrink: 0; margin-left: 1rem; text-decoration: line-through;">
+                            R$ 24,90
+                        </span>
+                    </div>
+
+
+                    <div
+                        style="background-color: #f3f4f6; padding: 0.75rem 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: bold; color: #1f2937;">Valor Total:</span>
+                            <span
+                                style="font-weight: bold; color: #ef4444; font-size: 1.125rem; text-decoration: line-through;">
+                                R$ 74,79
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preço de Oferta -->
+                <div
+                    style="text-align: center; margin-bottom: 1.5rem; padding: 1.5rem; background-color: #f9fafb; border-radius: 0.5rem; border: 2px solid #14b8a6;">
+                    <div style="font-size: 3rem; font-weight: bold; color: #111827; margin-bottom: 0.5rem;">
+                        R$ 19,90
+                    </div>
+                    <p style="color: #059669; font-weight: 600; font-size: 1.125rem; margin: 0.5rem 0;">
+                        Mais de R$ 54,89 de desconto!
+                    </p>
+                    <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">
+                        ou 4x de R$ 5,42
+                    </p>
+                </div>
+
+                <!-- Botão de Ação -->
+                <div style="text-align: center; margin-top: 1rem;">
+                    <a href="https://pay.kiwify.com.br/lfVqaqT" target="_blank" class="btn-oferta w-100">
+                        APROVEITAR ESTA OFERTA AGORA
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Texto de Urgência -->
+            <div style="margin-top: 2rem; text-align: center;">
+                <div style="color: #6b7280; white-space: pre-line; line-height: 1.6;">Esta é uma condição especial que
+                    eu estou abrindo apenas para as primeiras 100 pessoas que clicarem nesse botão.
+
+                    Quando essas vagas esgotarem, o valor da inscrição voltará para um valor muito mais alto e você
+                    ainda perde o acesso a TODOS os bônus que eu te mostrei aqui. Ou seja, você pagará mais caro,
+                    recebendo muito menos que poderia.
+
+                    Eu só decidi liberar por esse preço porque eu sei que ele é exatamente para pessoas como você que
+                    querem começar arriscando pouco e que sabem aproveitar uma boa oportunidade.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Comparativa -->
+    <section class="py-5" style="background-color: #111827; color: white;">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" style="color: white;">
+                Sua Escolha Hoje Define Seu Futuro
+            </h2>
+
+            <div class="row g-4 d-flex align-items-stretch">
+                <!-- Se Você AGIR Hoje -->
+                <div class="col-12 col-md-6">
+                    <div class="p-4 rounded h-100" style="background-color: #166534;">
+                        <div class="text-center mb-4">
+                            <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle"
+                                style="width: 4rem; height: 4rem; background-color: #22c55e;">
+                                <svg class="text-white" style="width: 2rem; height: 2rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold mb-0" style="color: white;">Se Você AGIR Hoje</h3>
+                        </div>
+
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-success"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Recuperar sua autoestima em poucos dias com atitudes simples e estratégicas</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-success"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Fazer ele sentir sua falta sem mandar mensagens ou implorar atenção</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-success"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Aprender o que realmente faz um homem sentir arrependimento e voltar por conta
+                                    própria</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-success"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Parar de se anular e conseguir impor limites com leveza, sem brigas ou
+                                    discussões</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-success"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Se sentir confiante, valorizada e emocionalmente no controle da situação</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Se Você NÃO Agir -->
+                <div class="col-12 col-md-6">
+                    <div class="p-4 rounded h-100" style="background-color: #991b1b;">
+                        <div class="text-center mb-4">
+                            <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle"
+                                style="width: 4rem; height: 4rem; background-color: #ef4444;">
+                                <svg class="text-white" style="width: 2rem; height: 2rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold mb-0" style="color: white;">Se Você NÃO Agir</h3>
+                        </div>
+
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-danger"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Continuar se sentindo invisível mesmo se esforçando para agradar</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-danger"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Ficar stalkeando redes sociais esperando migalhas de atenção que nunca vêm</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-danger"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Repetir atitudes que só afastam ainda mais e pioram a distância entre vocês</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-danger"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Aceitar tudo calada só para evitar conflitos e continuar sofrendo sozinha</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <svg class="flex-shrink-0 me-2 text-danger"
+                                    style="width: 1.25rem; height: 1.25rem; margin-top: 0.25rem;" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Sentir vergonha de si mesma, achando que perdeu totalmente o valor</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia -->
+    <section class="py-5" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <!-- Imagem -->
+                <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 18rem; height: 18rem; background: linear-gradient(135deg, #f1f5f9, #e2e8f0);">
+                        <img src="imagens/garantia.jpeg" class="img-fluid" alt="Garantia">
+                    </div>
+                </div>
+                <!-- Texto -->
+                <div class="col-12 col-md-6">
+                    <h2 class="fw-bold mb-3" style="color: #111827;">Garantia Incondicional</h2>
+                    <p class="mb-3" style="color: #374151; font-size: 1.125rem; line-height: 1.5;">
+                        Depois de todos os depoimentos, provas e argumentos que trouxe aqui, só existe mais uma coisa
+                        que posso fazer para você confiar em mim.
+                        Se você aplicar Código da Mulher Inesquecível e seguir o passo a passo como é orientado e, mesmo
+                        assim, não conseguir resultados em até 7 dias,
+                        eu devolvo 100% do valor investido na aquisição. É isso mesmo: você pode testar tudo sem medo,
+                        porque assumo esse compromisso com você.
+                        Confio tanto na facilidade e qualidade do meu método, que não tenho dúvidas que você terá
+                        resultados, como já acontece com diversas pessoas que também adquiriram este método.
+                    </p>
+                    <a href="https://pay.kiwify.com.br/lfVqaqT" target="_blank"
+                        class="btn btn-success btn-lg rounded-pill fw-bold">
+                        SIM, QUERO COMEÇAR COM GARANTIA
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section style="padding: 4rem 1.5rem; background-color: #ffffff;">
+        <div style="max-width: 1024px; margin: 0 auto;">
+            <h2 style="font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 3rem; color: #111827;">
+                Perguntas Frequentes
+            </h2>
+
+            <div class="accordion" id="faqAccordion">
+
+                <div class="accordion-item"
+                    style="background-color:#f9fafb; border-radius:0.5rem; border:1px solid #e5e7eb; margin-bottom:0.5rem;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1"
+                            style="background-color:#f9fafb; font-weight:500; color:#1f2937; border:none; box-shadow:none;">
+                            Quais são as formas de pagamento?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#6b7280; line-height:1.5;">
+                            Cartão de crédito, pix e outras modalidades de pagamento seguras.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"
+                    style="background-color:#f9fafb; border-radius:0.5rem; border:1px solid #e5e7eb; margin-bottom:0.5rem;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2"
+                            style="background-color:#f9fafb; font-weight:500; color:#1f2937; border:none; box-shadow:none;">
+                            O acesso é vitalício?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#6b7280; line-height:1.5;">
+                            Sim! Uma vez adquirido, você terá acesso vitalício ao conteúdo e todas as atualizações
+                            futuras.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"
+                    style="background-color:#f9fafb; border-radius:0.5rem; border:1px solid #e5e7eb; margin-bottom:0.5rem;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3"
+                            style="background-color:#f9fafb; font-weight:500; color:#1f2937; border:none; box-shadow:none;">
+                            Posso acessar pelo celular?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#6b7280; line-height:1.5;">
+                            Claro! A plataforma é totalmente responsiva e você pode acessar de qualquer dispositivo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"
+                    style="background-color:#f9fafb; border-radius:0.5rem; border:1px solid #e5e7eb; margin-bottom:0.5rem;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4"
+                            style="background-color:#f9fafb; font-weight:500; color:#1f2937; border:none; box-shadow:none;">
+                            Como recebo o produto após a compra?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#6b7280; line-height:1.5;">
+                            Imediatamente após a confirmação do pagamento, você receberá os dados de acesso no seu
+                            e-mail.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"
+                    style="background-color:#f9fafb; border-radius:0.5rem; border:1px solid #e5e7eb; margin-bottom:0.5rem;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5"
+                            style="background-color:#f9fafb; font-weight:500; color:#1f2937; border:none; box-shadow:none;">
+                            Tem garantia?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#6b7280; line-height:1.5;">
+                            Sim, oferecemos garantia incondicional de 07 dias. Se não ficar satisfeito, devolvemos 100%
+                            do seu dinheiro.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"
+                    style="background-color:#f9fafb; border-radius:0.5rem; border:1px solid #e5e7eb; margin-bottom:0.5rem;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6"
+                            style="background-color:#f9fafb; font-weight:500; color:#1f2937; border:none; box-shadow:none;">
+                            É seguro comprar?
+                        </button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#6b7280; line-height:1.5;">
+                            Totalmente seguro! Utilizamos as melhores ferramentas de segurança e nossa empresa é
+                            registrada e confiável.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item"
+                    style="background-color:#f9fafb; border-radius:0.5rem; border:1px solid #e5e7eb; margin-bottom:0.5rem;">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7"
+                            style="background-color:#f9fafb; font-weight:500; color:#1f2937; border:none; box-shadow:none;">
+                            Posso revender o produto?
+                        </button>
+                    </h2>
+                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body" style="color:#6b7280; line-height:1.5;">
+                            Não, o produto é para uso pessoal e não pode ser revendido ou compartilhado.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 2rem 1.5rem; background-color: #111827; color: white;">
+        <div style="max-width: 1024px; margin: 0 auto; text-align: center;">
+            <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">
+                Código da Mulher Inesquecível © 2025. Todos os direitos reservados.
+            </p>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Adiciona a data do dia na barra de urgência
+        const today = new Date();
+        const day = today.getDate();
+        const month = today.toLocaleString('pt-BR', { month: 'long' });
+        const year = today.getFullYear();
+
+        document.getElementById('urgent-date').textContent = `${day - 2}, ${day - 1}, ${day} de ${month}`;
+    </script>
+</body>
+
+</html>
